@@ -1,0 +1,28 @@
+.slideItem{
+    height:36.7em;}
+
+a{
+    color:white;
+}
+a:hover 
+{text-decoration: none;}
+
+a:focus{
+    color:grey
+}
+
+.mainCarousel{
+
+    
+}
+
+.slidePhoto{
+    width:100%;
+}
+
+.about{
+    display: grid;
+    justify-content: center;
+    font-style: italic;
+    color: rgb(46, 42, 42);
+}

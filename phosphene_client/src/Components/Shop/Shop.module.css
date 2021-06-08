@@ -1,0 +1,26 @@
+.shopImage{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    margin-left: 15em;
+    margin-right: 15em;
+    margin-top: 2em;
+    margin-bottom:2em;
+    justify-items: center;
+    
+}
+
+body{
+    background-color: rgb(238, 238, 238);
+}
+.item{
+  
+    height: max-content;
+    width: max-content;
+    word-wrap: break-word;
+    padding:.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image{
+    object-fit: cover;
+}
