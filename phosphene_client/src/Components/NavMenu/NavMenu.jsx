@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./NavMenu.css";
 import styled from "styled-components";
 import logo from "../../images/logo2.png";
-import { BsSearch } from "react-icons/bs";
+import Links from "../Links/Links"
 
 const StyledLink = styled.div`
   a:hover {
@@ -67,6 +67,7 @@ function NavMenu() {
                   </Link>{" "}
                 </NavLink>
               </Nav>
+             
               <Nav>
                 <div className="input-group rounded">
                   <input
@@ -81,7 +82,6 @@ function NavMenu() {
                     id="search-addon"
                   >
                     <i className="fa fa-search">
-                      <BsSearch />
                     </i>
                   </span>
                 </div>

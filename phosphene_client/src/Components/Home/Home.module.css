@@ -1,28 +1,27 @@
-.slideItem{
-    height:36.7em;}
-
-a{
-    color:white;
-}
-a:hover 
-{text-decoration: none;}
-
-a:focus{
-    color:grey
+.slideItem {
+  height: 100%;
+  min-height: 100%;
 }
 
-.mainCarousel{
-
-    
+a {
+  color: white;
+}
+a:hover {
+  text-decoration: none;
 }
 
-.slidePhoto{
-    width:100%;
+a:focus {
+  color: grey;
 }
 
-.about{
-    display: grid;
-    justify-content: center;
-    font-style: italic;
-    color: rgb(46, 42, 42);
+.slidePhoto {
+  height: 33em;
+  width: 100%;
+}
+
+.about {
+  display: grid;
+  justify-content: center;
+  font-style: italic;
+  color: rgb(46, 42, 42);
 }

@@ -17,7 +17,7 @@ const loadEarringsAC = (data) => {
 };
 
 let defaultShopData = {
-  currentCollection : "",
+  currentCollection: "",
   shopData: [
     // {
     //   image:
@@ -56,13 +56,13 @@ let defaultShopData = {
 const shopReducer = (shopState = defaultShopData, action) => {
   switch (action.type) {
     case PENDANTS:
-      return {shopData:action.data}
+      return { shopData: action.data };
 
     case BROOCHES:
-      return {shopData:action.data}
+      return { shopData: action.data };
 
     case EARINGS:
-      return {shopData:action.data}
+      return { shopData: action.data };
 
     default:
       return shopState;
@@ -74,29 +74,28 @@ export default shopReducer;
 export const getEarringsThunk = () => {
   debugger;
   return (dispatch) => {
-  axios.get("/api/getEarrings").then( response =>{
-    dispatch(loadEarringsAC(response))
-  }
-    )
-  }
+    axios
+      .get("https://phosphene.herokuapp.com/api/getEarrings")
+      .then((response) => {
+        dispatch(loadEarringsAC(response));
+      });
+  };
 };
 
 export const getPendantsThunk = () => {
   debugger;
   return (dispatch) => {
-  axios.get("/api/getPendants").then( response =>
-    dispatch(loadPendantsAC(response))
-  )
- }
+    axios
+      .get("https://phosphene.herokuapp.com/api/getPendants")
+      .then((response) => dispatch(loadPendantsAC(response)));
+  };
 };
 
 export const getBroochesThunk = () => {
   debugger;
   return (dispatch) => {
-  axios.get("/api/getBrooches").then( response =>
-    dispatch(loadBroochesAC(response))
-  )
- }
+    axios
+      .get("https://phosphene.herokuapp.com/api/getBrooches")
+      .then((response) => dispatch(loadBroochesAC(response)));
+  };
 };
-
-

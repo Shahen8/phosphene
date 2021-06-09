@@ -5,7 +5,7 @@ I will update the list by the time
 
 ## Get
 
-- `https://phosphene.herokuapp.com/api/ { getPendant || getBrooches || getEarrings } `
+- ` https://phosphene.herokuapp.com/api/ { getPendant || getBrooches || getEarrings } `
 
 **Response** will be...
 
