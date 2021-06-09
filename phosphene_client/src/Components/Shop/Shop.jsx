@@ -22,16 +22,18 @@ const options = {
 
 function Shop(props) {
   console.log("im rendering");
+  debugger;
 
   const [state, setState] = useState(props.state.shop);
 
   const { collection } = useParams();
-
   useEffect(() => {
+    setState(props.state.shop);
     return props[collection]();
-  }, [collection]);
+  }, [collection , props.state.shop]);
 
   let items = state.shopData.map((elem) => {
+    debugger;
     return (
       <div className={style.item} key={elem.id}>
         <img

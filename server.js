@@ -1,7 +1,7 @@
 import config from "./config.js";
 import express from "express";
 import mongoose from "mongoose";
-// import adminRouter from "./Routes/adminRoute.js";
+import adminRouter from "./Routes/adminRoute.js";
 import getShop from "./Routes/shopRoute.js";
 import path from "path";
 
@@ -10,7 +10,7 @@ const __dirname = path.resolve(path.dirname(""));
 
 app.set("view engine", "jade");
 app.use("/api", getShop);
-// app.use("/admin", adminRouter);
+app.use("/admin", adminRouter);
 app.use("/", express.static(path.join(__dirname, config.STATIC_FILES)));
 
 app.get("*", (req, res) => {

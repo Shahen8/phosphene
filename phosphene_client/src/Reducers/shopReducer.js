@@ -55,13 +55,13 @@ let defaultShopData = {
 const shopReducer = (shopState = defaultShopData, action) => {
   switch (action.type) {
     case PENDANTS:
-      return { shopData: action.data };
+      return { ...shopState, shopData: action.data };
 
     case BROOCHES:
-      return { shopData: action.data };
+      return { ...shopState, shopData: action.data };
 
     case EARINGS:
-      return { shopData: action.data };
+      return { ...shopState, shopData: action.data };
 
     default:
       return shopState;
