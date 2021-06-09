@@ -73,11 +73,9 @@ export default shopReducer;
 export const getEarringsThunk = () => {
   debugger;
   return (dispatch) => {
-    axios
-      .get("https://phosphene.herokuapp.com/api/getEarrings")
-      .then((response) => {
-        dispatch(loadEarringsAC(response));
-      });
+    axios.get("/api/getEarrings").then((response) => {
+      dispatch(loadEarringsAC(response));
+    });
   };
 };
 
@@ -85,7 +83,7 @@ export const getPendantsThunk = () => {
   debugger;
   return (dispatch) => {
     axios
-      .get("https://phosphene.herokuapp.com/api/getPendants")
+      .get("/api/getPendants")
       .then((response) => dispatch(loadPendantsAC(response)));
   };
 };
@@ -94,7 +92,7 @@ export const getBroochesThunk = () => {
   debugger;
   return (dispatch) => {
     axios
-      .get("https://phosphene.herokuapp.com/api/getBrooches")
+      .get("/api/getBrooches")
       .then((response) => dispatch(loadBroochesAC(response)));
   };
 };
