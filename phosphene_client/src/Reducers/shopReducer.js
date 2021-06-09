@@ -84,7 +84,7 @@ export const getPendantsThunk = () => {
   return (dispatch) => {
     axios
       .get("/api/getPendants")
-      .then((response) => dispatch(loadPendantsAC(JSON.parse(response.data))));
+      .then((response) => dispatch(loadPendantsAC(JSON.parse(JSON.stringify(response.data)))));
     // dispatch(
     //   loadPendantsAC([
     //     {
@@ -103,6 +103,6 @@ export const getBroochesThunk = () => {
   return (dispatch) => {
     axios
       .get("/api/getBrooches")
-      .then((response) => dispatch(loadBroochesAC(JSON.parse(response.data))));
+      .then((response) => dispatch(loadBroochesAC(JSON.parse(JSON.stringify(response)))));
   };
 };
