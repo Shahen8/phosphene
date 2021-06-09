@@ -104,9 +104,7 @@ export const getBroochesThunk = () => {
     axios
       .get("/api/getBrooches")
       .then((response) => {
-        console.log(response)
-        let data = JSON.parse(response)
-        console.log(data)
-        dispatch(loadBroochesAC(data))});
+        console.log(response.data)
+        dispatch(loadBroochesAC(response.data))});
   };
 };
