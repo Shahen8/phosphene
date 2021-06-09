@@ -8,7 +8,7 @@ const router = Router();
 router.get("/getEarrings", async (req, res) => {
   try {
     let earrings = await db.collection("earrings").find({}).toArray();
-    res.json(earrings)
+   res.json(earrings)
   } catch (error) {
     return errorHandler(res, error);
   }
