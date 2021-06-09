@@ -8,7 +8,7 @@ const router = Router();
 router.get("/getEarrings", async (req, res) => {
   try {
     let earrings = await db.collection("earrings").find({}).toArray();
-    res.json(earrings);
+    res = earrings
   } catch (error) {
     return errorHandler(res, error);
   }
@@ -17,7 +17,7 @@ router.get("/getEarrings", async (req, res) => {
 router.get("/getBrooches", async (req, res) => {
   try {
     let brooches = await db.collection("brooches").find({}).toArray();
-    res.json(brooches);
+    res = brooches;
   } catch (error) {
     return errorHandler(res, error);
   }
@@ -29,7 +29,7 @@ router.get("/getPendandts", async (req, res) => {
       .collection("pendants")
       .find({})
       .toArray();
-    res.json(pendands);
+    res = pendands;
   } catch (error) {
     return errorHandler(res, error);
   }
