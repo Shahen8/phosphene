@@ -29,7 +29,7 @@ function Shop(props) {
 
   useEffect(() => {
     return props[collection]();
-  }, [collection, props.state.shop]);
+  }, [collection]);
 
   let items = state.shopData.map((elem) => {
     return (
