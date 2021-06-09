@@ -1,4 +1,5 @@
 import * as axios from "axios";
+import { JSONCookie } from "cookie-parser";
 
 const PENDANTS = "PENDANTS";
 const BROOCHES = "BROOCHES";
@@ -71,22 +72,19 @@ const shopReducer = (shopState = defaultShopData, action) => {
 export default shopReducer;
 
 export const getEarringsThunk = () => {
-
   return (dispatch) => {
     axios.get("/api/getEarrings").then((response) => {
-        debugger;
-      dispatch(loadEarringsAC(response));
-      
+      debugger;
+      dispatch(loadEarringsAC(JSON.parse(response)));
     });
   };
 };
 
 export const getPendantsThunk = () => {
-
   return (dispatch) => {
     axios
       .get("/api/getPendants")
-      .then((response) => dispatch(loadPendantsAC(response)));
+      .then((response) => dispatch(loadPendantsAC(JSON.parse(response))));
     // dispatch(
     //   loadPendantsAC([
     //     {
@@ -102,10 +100,9 @@ export const getPendantsThunk = () => {
 };
 
 export const getBroochesThunk = () => {
-
   return (dispatch) => {
     axios
       .get("/api/getBrooches")
-      .then((response) => dispatch(loadBroochesAC(response)));
+      .then((response) => dispatch(loadBroochesAC(JSON.parse(response))));
   };
 };
