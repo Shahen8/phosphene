@@ -1,0 +1,7 @@
+/node_modules
+/.adminbro
+persInfo.txt
+phosphene_client/node_modules
+test.js
+phosphene_client/src/Reducers/aboutUsReducer.js
+phosphene_client/src/Components/Users
