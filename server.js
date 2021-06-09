@@ -1,12 +1,12 @@
-import config from "./config.js";
-import express from "express";
-import mongoose from "mongoose";
-// import adminRouter from "./Routes/adminRoute.js";
-import getShop from "./Routes/shopRoute.js";
-import path from "path";
+const config =require("./config.js");
+const express =require("express");
+const mongoose =require("mongoose");
+// const adminRouter =require("./Routes/adminRoute.js");
+const getShop =require("./Routes/shopRoute.js");
+const path =require("path");
 
 const app = express();
-const __dirname = path.resolve(path.dirname(""));
+// const __dirname = path.resolve(path.dirname(""));
 
 app.set("view engine", "jade");
 app.use("/api", getShop);

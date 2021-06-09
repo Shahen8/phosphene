@@ -1,5 +1,5 @@
-import Router from "express";
-import mongoose from "mongoose";
+const Router =require("express")
+const mongoose =require("mongoose")
 
 const db = mongoose.connection
 
@@ -47,4 +47,4 @@ function errorHandler(res, error) {
     return res.status(500).send("Something went wrong.Please contact support")
 }
 
-export default router;
+module.exports = router
