@@ -13,7 +13,7 @@ function Links() {
         </a>
 
         <a
-          href="https://www.facebook.com/Phosphenejewelry/"
+          to="https://www.facebook.com/Phosphenejewelry/"
           className={styles.fblink}
         >
           <i className="fa fa-facebook-square"></i>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, NavLink, Nav} from "react-bootstrap";
+import { Navbar, Container, Nav} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavMenu.css";
 import styled from "styled-components";
@@ -54,18 +54,16 @@ function NavMenu() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Container>
               <Nav className="mr-auto">
-                <NavLink>
+                
                   {" "}
                   <Link className="link " to="/home">
                     Home
                   </Link>{" "}
-                </NavLink>
-                <NavLink>
+                
                   {" "}
                   <Link className="link " to="/aboutus">
                     About Us
                   </Link>{" "}
-                </NavLink>
               </Nav>
              
               <Nav>

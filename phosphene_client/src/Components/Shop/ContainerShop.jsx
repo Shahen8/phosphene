@@ -7,7 +7,6 @@ import {
 } from "../.././Reducers/shopReducer";
 
 let mapStateToProps = (state) => {
-  console.log(state);
   return { state };
 };
 

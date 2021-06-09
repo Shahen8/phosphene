@@ -24,16 +24,22 @@ function Shop(props) {
   console.log("im rendering");
   debugger;
 
-  const [state, setState] = useState(props.state.shop);
-
+  let [state, setState] = useState(props.state.shop.shopData);
+  debugger;
   const { collection } = useParams();
   useEffect(() => {
-    setState(props.state.shop);
-    return props[collection]();
-  }, [collection , props.state.shop]);
-
-  let items = state.shopData.map((elem) => {
     debugger;
+      return props[collection]();
+    
+  }, [collection]);
+
+  useEffect(() => {
+    debugger;
+    setState(props.state.shop.shopData)
+  }, [props.state.shop.shopData])
+
+  let items = state.map((elem) => {
+
     return (
       <div className={style.item} key={elem.id}>
         <img

@@ -71,25 +71,39 @@ const shopReducer = (shopState = defaultShopData, action) => {
 export default shopReducer;
 
 export const getEarringsThunk = () => {
-  debugger;
+
   return (dispatch) => {
     axios.get("/api/getEarrings").then((response) => {
+      if(response.json() !== defaultShopData.shopData.json()){
+        debugger;
       dispatch(loadEarringsAC(response));
+      }
     });
   };
 };
 
 export const getPendantsThunk = () => {
-  debugger;
+
   return (dispatch) => {
     axios
       .get("/api/getPendants")
       .then((response) => dispatch(loadPendantsAC(response)));
+    // dispatch(
+    //   loadPendantsAC([
+    //     {
+    //       image:
+    //         "https://scontent.fevn1-4.fna.fbcdn.net/v/t1.6435-9/182102320_546499850088672_7522202900137631407_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=a26aad&_nc_ohc=7-kYn8ytKrgAX-Y-zVG&_nc_ht=scontent.fevn1-4.fna&oh=5f1be2b344ea31aa05185b3c99bfecca&oe=60C27811",
+    //       desc: `
+    //   Գտնված երազ💫   Կրծքազարդի արժեքը 3000 դրամ`,
+    //       bigImg: false,
+    //     },
+    //   ])
+    // );
   };
 };
 
 export const getBroochesThunk = () => {
-  debugger;
+
   return (dispatch) => {
     axios
       .get("/api/getBrooches")

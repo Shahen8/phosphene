@@ -8,15 +8,13 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import Links from "./Components/Links/Links"
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <Provider store={store}>
         <SimpleReactLightbox>
           <App />
         </SimpleReactLightbox>
       </Provider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
 
