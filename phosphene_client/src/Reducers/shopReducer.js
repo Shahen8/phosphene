@@ -17,7 +17,6 @@ const loadEarringsAC = (data) => {
 };
 
 let defaultShopData = {
-  currentCollection: "",
   shopData: [
     // {
     //   image:
