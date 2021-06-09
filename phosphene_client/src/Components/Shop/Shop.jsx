@@ -24,7 +24,7 @@ function Shop(props) {
   console.log("im rendering");
   debugger;
 
-  let [state, setState] = useState(props.state.shop.shopData);
+  let [state, setState] = useState(props.state.shop);
   debugger;
   const { collection } = useParams();
   useEffect(() => {
@@ -35,10 +35,10 @@ function Shop(props) {
 
   useEffect(() => {
     debugger;
-    setState(props.state.shop.shopData)
-  }, [props.state.shop.shopData])
+    setState(props.state.shop)
+  }, [props.state.shop])
 
-  let items = state.map((elem) => {
+  let items = state.shopData.map((elem) => {
 
     return (
       <div className={style.item} key={elem.id}>
