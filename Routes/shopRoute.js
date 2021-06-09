@@ -1,5 +1,5 @@
-const Router = require("express");
-const mongoose = require("mongoose");
+import Router from "express";
+import mongoose from "mongoose";
 
 const db = mongoose.connection;
 
@@ -41,4 +41,4 @@ function errorHandler(res, error) {
   return res.status(500).send("Something went wrong.Please contact support");
 }
 
-module.exports = router
+export default router

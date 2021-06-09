@@ -12,4 +12,4 @@ config = {
   STATIC_FILES: "/phosphene_client/build",
 };
 
-module.exports = config
+export default config
