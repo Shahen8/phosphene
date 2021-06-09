@@ -53,6 +53,7 @@ let defaultShopData = {
 };
 
 const shopReducer = (shopState = defaultShopData, action) => {
+  debugger;
   switch (action.type) {
     case PENDANTS:
       return { shopData: action.data };

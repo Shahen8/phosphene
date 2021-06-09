@@ -26,10 +26,12 @@ function Shop(props) {
   const [state, setState] = useState(props.state.shop);
 
   const { collection } = useParams();
+  debugger;
 
   useEffect(() => {
+    debugger;
     return props[collection]();
-  }, [collection, props.state.shop]);
+  }, [collection]);
 
   let items = state.shopData.map((elem) => {
     return (
