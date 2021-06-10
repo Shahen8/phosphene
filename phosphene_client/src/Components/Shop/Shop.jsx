@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Shop.module.css";
 import { SRLWrapper } from "simple-react-lightbox";
 import { useParams } from "react-router-dom";
+import loader from "../../images/loader.gif"
 
 const options = {
   settings: {
@@ -22,19 +23,20 @@ const options = {
 
 function Shop(props) {
   console.log("im rendering");
-  debugger;
+  
 
   let [state, setState] = useState(props.state.shop);
-  debugger;
+  let [fetching , setFetching] = useState(props.state.shop.isFetching)
   const { collection } = useParams();
   useEffect(() => {
-    debugger;
+    
       return props[collection]();
     
   }, [collection]);
 
   useEffect(() => {
-    debugger;
+    
+    setFetching(props.state.shop.isFetching)
     setState(props.state.shop)
   }, [props.state.shop])
 
@@ -44,7 +46,7 @@ function Shop(props) {
       <div className={style.item} key={elem.id}>
         <img
           className={style.image}
-          src={"data:image/png;base64," + elem.base64}
+          src={fetching ? loader : "data:image/png;base64," + elem.base64}
           alt={elem.desc}
           width="300"
           height="300"
