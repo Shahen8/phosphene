@@ -5,7 +5,6 @@ import store from "./redux";
 import { BrowserRouter as Router  } from "react-router-dom";
 import { Provider } from "react-redux";
 import SimpleReactLightbox from "simple-react-lightbox";
-import Links from "./Components/Links/Links"
 
 ReactDOM.render(
     <Router>

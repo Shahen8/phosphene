@@ -5,7 +5,7 @@ import styles from "./App.css"
 import ContainerShop from "./Components/Shop/ContainerShop";
 import ContainerHome from "./Components/Home/ContainerHome";
 import { Switch, Route } from "react-router-dom";
-import Links from "./Components/Links/Links";
+import Footer from "./Components/Footer/Footer";
 
 export function App(props) {
   return (
@@ -20,7 +20,7 @@ export function App(props) {
           render={() => <ContainerShop />}
         ></Route>
       </Switch>
-      <div className={styles.footer}><Links /></div>
+      <div className={styles.footer}><Footer /></div>
     </div>
   );
 }

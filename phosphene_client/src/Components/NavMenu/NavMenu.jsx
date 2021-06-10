@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./NavMenu.css";
 import styled from "styled-components";
 import logo from "../../images/logo2.png";
-import Links from "../Links/Links"
 
 const StyledLink = styled.div`
   a:hover {

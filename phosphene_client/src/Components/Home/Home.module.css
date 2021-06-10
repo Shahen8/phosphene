@@ -15,7 +15,7 @@ a:focus {
 }
 
 .slidePhoto {
-  height: 33em;
+  height: 30em;
   width: 100%;
   object-fit: cover;
 }
