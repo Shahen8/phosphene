@@ -20,8 +20,8 @@ function Footer() {
         </a>
       </div>
       <div className = {styles.footerPersonal}>
-        <h6> <i className ="fa fa-envelope"></i> Phosphenejewelry@gmail.com</h6>
-        <h6><i className="fa fa-phone-square"></i> +374-99-43-39-31</h6>
+        <h6> <i className ="fa fa-envelope"></i> phosphenejewelry@gmail.com</h6>
+        <h6> <i className="fa fa-phone-square"></i> +374-99-43-39-31</h6>
       </div>
     </div>
   );
