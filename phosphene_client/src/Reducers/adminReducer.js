@@ -1,8 +1,15 @@
+import axios from "axios";
+
 const URL_CHANGE = "URL_CHANGE";
 const DESC_CHANGE = "DESC_CHANGE";
 const USER_NAME_CHANGE = "USER_NAME_CHANGE";
 const PASS_CHANGE = "PASS_CHANGE";
+const AUTH = "AUTH"
 
+
+const authAC = (bool) => {
+  return {type : AUTH , bool}
+}
 const userChangeAC = (value) => {
   return { type: USER_NAME_CHANGE, value };
 };
@@ -20,7 +27,7 @@ const urlChangeAC = (value) => {
 };
 
 const adminDefaultState = {
-  auth: true,
+  auth: false,
   urlValue: "",
   descValue: "",
   userValue: "",
@@ -37,6 +44,8 @@ const adminReducer = (adminState = adminDefaultState, action) => {
       return { adminState, userValue: action.value };
       case PASS_CHANGE:
       return { adminState, passValue: action.value };
+      case AUTH: 
+      return {adminState , auth:action.data}
     default:
       return adminState;
   }
@@ -66,7 +75,15 @@ export const userChangethunk = (value) => {
   };
 };
 
-export const postBrooche = () =>{
+export const loginThunk = (adminData) => {
+  return (dispatch) => {
+    axios.post("/admin/login" , {
+      adminData
+    }).then((response) => dispatch(response.data))
+  }
+}
+
+export const postBrooche = () => {
 
 }
 

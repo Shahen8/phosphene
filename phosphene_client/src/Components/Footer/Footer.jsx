@@ -13,7 +13,7 @@ function Footer() {
         </a>
 
         <a
-          to="https://www.facebook.com/Phosphenejewelry/"
+          href="https://www.facebook.com/Phosphenejewelry/"
           className={styles.fblink}
         >
           <i className="fa fa-facebook-square"></i>

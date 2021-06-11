@@ -35,10 +35,10 @@ router.get("/getPendandts", async (req, res) => {
   }
 });
 
-// ______HELPERS _____________
+
 function errorHandler(res, error) {
   console.log(error);
-  return res.status(500).send("Something went wrong.Please contact support");
+  return res.status(500).json({message:"Something went wrong.Please contact support"});
 }
 
 export default router;

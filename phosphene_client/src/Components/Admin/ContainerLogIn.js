@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { userChangethunk, passChangethunk } from "../../Reducers/adminReducer";
+import { userChangethunk, passChangethunk, loginThunk } from "../../Reducers/adminReducer";
 import LogIn from "./LogIn";
 
 let mapStateToProps = (state) => {
@@ -8,7 +8,8 @@ let mapStateToProps = (state) => {
 
 const ContainerLogIn = connect(mapStateToProps, {
   userChange: (value) => userChangethunk(value),
-  passChange: (value) => passChangethunk(value)
+  passChange: (value) => passChangethunk(value),
+  login : (adminData) => loginThunk(adminData)
 })(LogIn);
 
 export default ContainerLogIn

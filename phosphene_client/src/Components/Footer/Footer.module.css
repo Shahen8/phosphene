@@ -22,7 +22,7 @@
 
 .footerSocial {
   display: flex;
-  justify-self: right;
+  justify-self: center;
   justify-content: center;
   border-style: 2px solid;
   align-self: center;
@@ -33,7 +33,7 @@
 }
 
 .footerPersonal {
-  justify-self: left;
+  justify-self: center;
   display: grid;
   justify-content: center;
   border-style: 2px solid;
@@ -55,10 +55,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  grid-gap: 8em;
+  justify-self: center;
   border-top: 1px solid;
   align-self: end;
   margin: 0.5em;
   margin-top: 2em;
   border-color: rgb(117, 116, 116);
+  width:50%
 }

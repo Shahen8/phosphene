@@ -1,33 +1,29 @@
-import adminBro from "admin-bro";
-import adminBroExpress from "@admin-bro/express";
+import Router from "express";
 import mongoose from "mongoose";
-import adminBroMongoose from "admin-bro-mongoose";
 
-adminBro.registerAdapter(adminBroMongoose);
+const db = mongoose.connection;
 
-const adminApp = new adminBro({
-  databases: [mongoose],
-  rootPath: "/admin",
-  branding: {
-    companyName: "Phosphene",
-  },
-});
+const router = Router();
 
-const adminRouter = adminBroExpress.buildAuthenticatedRouter(adminApp, {
-  cookieName: process.env.ADMIN_COOKIE_NAME || "phosphene-admin-page-user-name",
-  cookiePassword:
-    process.env.ADMIN_COOKIE_PASSWORD || "phosphene-admin-page-password",
-  authenticate: async (userName, password) => {
-    let adminData = await mongoose.connection.db.collection("admin").findOne();
-    const ADMIN = {
-      adminUNAME: process.env.ADMIN_COOKIE_NAME || adminData.adminUNAME,
-      adminPASS: process.env.ADMIN_COOKIE_PASSWORD || adminData.userPASS,
-    };
-    console.log();
-    if (userName === ADMIN.adminUNAME && password === ADMIN.adminPASS) {
-      return ADMIN;
+router.post("/login", async (req, res) => {
+  const { userName, password } = req.body;
+  try {
+    let admin = await db.collection("admin").find({});
+    if (admin.userName === userName && admin.password === password) {
+      req.send(true);
+    } else {
+      req.status(400).json({ message: "Wrong username or password" });
     }
-    return null;
-  },
+  } catch (error) {
+    return errorHandler(res, error);
+  }
 });
-export default adminRouter;
+
+function errorHandler(res, error) {
+  console.log(error);
+  return res
+    .status(500)
+    .json({ message: "Something went wrong.Please contact support" });
+}
+
+export default router;

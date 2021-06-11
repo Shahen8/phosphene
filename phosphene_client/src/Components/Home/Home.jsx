@@ -9,7 +9,7 @@ import {Link } from "react-router-dom"
 function Home(props) {
 
   return (
-    <div>
+    <div className = {style.container}>
       <Carousel className={style.mainCarousel}>
         <Carousel.Item className={style.slideItem}>
           <img className={style.slidePhoto} src={slide1} alt="slide-1" />

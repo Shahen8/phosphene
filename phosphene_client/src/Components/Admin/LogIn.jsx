@@ -4,6 +4,7 @@ import styles from "./Admin.module.css";
 function LogIn(props) {
   const [userName, setUserName] = useState(props.state.admin.userValue);
   const [pass, setPass] = useState(props.state.admin.passValue);
+
   useEffect(() => {
     props.userChange(userName);
   }, [userName]);
@@ -32,7 +33,7 @@ function LogIn(props) {
           type="password"
           placeholder="password"
         ></input>
-        <button className="btn btn-success">Sign In</button>
+        <button type="submit" onClick={props.login(userName,pass)} className="btn btn-success">Sign In</button>
       </div>
     </div>
   );
