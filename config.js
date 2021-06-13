@@ -1,4 +1,5 @@
-const config = {
+const config ={
+    jwt: "phospheneUniqueToken",
     PORT: process.env.PORT || 8080,
     DB_URI: "mongodb+srv://user:i6%23.aBCiHGcz5bu@cluster0.r2ag6.mongodb.net/Phosphene?retryWrites=true&w=majority",//Production
     DB_OPTIONS: {
@@ -9,4 +10,4 @@ const config = {
     STATIC_FILES: "/phosphene_client/build"
 }
 
-export default config
+module.exports = config

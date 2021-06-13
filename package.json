@@ -21,11 +21,13 @@
     "admin-bro": "^4.0.1",
     "concurrently": "^6.2.0",
     "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
     "i": "^0.3.6",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.9",
     "npm": "^7.16.0"
   },

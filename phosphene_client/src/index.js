@@ -5,13 +5,20 @@ import store from "./redux";
 import { BrowserRouter as Router , useRouteMatch } from "react-router-dom";
 import { Provider } from "react-redux";
 import SimpleReactLightbox from "simple-react-lightbox";
-import AdminHeader from "./Components/Admin/AdminHeader"
+import ContainerAdmin from "./Components/Admin2/Admin"
+import { loginThunk } from "./Reducers/adminReducer";
+
+import ContainerDashboard from "./Components/Admin2/DashBoard"
 import Footer from "./Components/Footer/Footer";
 
+const onSubmit = (formData) => {
+  console.log("submit")
+  loginThunk(formData)
+}
+
 function renderComp() {
-  console.log(window.location.pathname)
   if(window.location.pathname === "/admin"){
-  return <AdminHeader state = {store.getState()}/>
+  return <ContainerAdmin onSubmit = {onSubmit}/>
 }
 return <App /> 
 

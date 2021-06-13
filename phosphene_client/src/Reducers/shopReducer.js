@@ -65,7 +65,7 @@ export default shopReducer;
 export const getEarringsThunk = () => {
   return (dispatch) => {
     axios
-      .get("/api/getEarrings")
+      .get("http://localhost:8080/api/getEarrings")
       .then((response) => dispatch(loadEarringsAC(response.data)))
       .then(dispatch(isFetchingAC(false)));
   };
@@ -74,7 +74,7 @@ export const getEarringsThunk = () => {
 export const getPendantsThunk = () => {
   return (dispatch) => {
     axios
-      .get("/api/getPendants")
+      .get("http://localhost:8080/api/getPendants")
       .then((response) => dispatch(loadPendantsAC(response.data)))
       .then(dispatch(isFetchingAC(false)));
     // dispatch(
@@ -94,7 +94,7 @@ export const getPendantsThunk = () => {
 export const getBroochesThunk = () => {
   return (dispatch) => {
     axios
-      .get("/api/getBrooches")
+      .get("http://localhost:8080/api/getBrooches")
       .then((response) => dispatch(loadBroochesAC(response.data)))
       .then(dispatch(isFetchingAC(false)));
   };

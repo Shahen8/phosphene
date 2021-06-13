@@ -28,10 +28,6 @@ const urlChangeAC = (value) => {
 
 const adminDefaultState = {
   auth: false,
-  urlValue: "",
-  descValue: "",
-  userValue: "",
-  passValue: ""
 };
 const adminReducer = (adminState = adminDefaultState, action) => {
   debugger;
@@ -77,10 +73,13 @@ export const userChangethunk = (value) => {
 
 export const loginThunk = (adminData) => {
   return (dispatch) => {
-    axios.post("/admin/login" , {
+    axios.post("http://localhost:8080/admin/login" , {
       adminData
-    }).then((response) => dispatch(response.data))
-  }
+    }).then((response) => {
+      console.log(response.status)
+    })
+    
+}
 }
 
 export const postBrooche = () => {
