@@ -1,13 +1,26 @@
-input {
+.inputField {
   border-radius: 3px;
-  border-style: solid;
+  width: max-content;
+  margin: .5em;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+
+.inputField > input {
   height: 2.2em;
-  border-width: 1px;
+}
+
+.inputField > span {
+  color:rgb(245, 88, 88);
+  font-size: 12px;
 }
 
 h4{
-  color:rgb(194, 194, 194);
+  color:rgb(252, 248, 248);
   justify-self: center;
+  width:max-content;
+  border-radius: 5px;
+  margin-bottom: 1em;
 }
 .main {
   margin-top: 2em;
@@ -26,7 +39,6 @@ h4{
     margin-top: 2em;
     justify-self: center;
     justify-content: center;
-    grid-gap: 1em;
     align-self: center;
     display: grid;
     background-color: rgb(58, 57, 56);
@@ -36,6 +48,8 @@ h4{
     width: min-content;
     border-radius: 10px;
 }
+
+
 
 .container {
   display: grid;
@@ -66,28 +80,3 @@ h4{
   margin:1em;
 }
 
-.logo {
-  display: grid;
-  justify-self: center;
-  grid-template-columns: 1.8fr 1fr;
-  width: 100%;
-  height: max-content;
-  padding: 0.5em;
-  background-color: white;
-  border-bottom: 1px solid
-}
-.logo > a {
-  justify-self: right;
-}
-
-.logo > button {
-  justify-self: right;
-  align-self: center;
-  margin-right: 1em;
-}
-
-.logo > a > img {
-  border-radius: 15px;
-  justify-self: center;
-  object-fit: cover;
-}

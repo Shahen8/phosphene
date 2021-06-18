@@ -1,28 +1,38 @@
-const Router =require("express")
+const Router = require("express")
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken")
 const config = require ("../config")
+const tokenCheck = require ("../tokenCheckMiddlewear")
 
 const db = mongoose.connection;
 
 const router = Router();
 
+router.get("/", tokenCheck, async (req, res) => {
+  try {
+    console.log(req.user)
+    res.json({token: req.user})
+  } catch (error) {
+  }
+});
+
 router.post("/login", async (req, res) => {
   debugger;
   console.log(req.body)
-  const { userName, password } = req.body;
   try {
-    let admin = await db.collection("admin").find({});
-    if (admin.userName === userName && admin.password === password) {
+    let admin = await db.collection("admin").findOne({});
+    console.log(admin)
+    if (admin.userName === req.body.login.toLowerCase() && admin.password === req.body.password) {
+      console.log("good")
       const token = jwt.sign(
         {adminId:admin._id},
         config.jwt,
-        {expiresIn: "1h"}
+        {expiresIn: "30m"}
       )
 
-      res.status(200).json({token})
+      res.status(200).json({resCode : 1 ,token})
     } else {
-      res.status(400).json({ message: "Wrong username or password" });
+      res.json({resCode: 0 ,  message: "Wrong username or password" });
     }
   } catch (error) {
     return errorHandler(res, error);

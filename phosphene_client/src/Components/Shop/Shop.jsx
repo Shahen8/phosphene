@@ -39,14 +39,13 @@ function Shop(props) {
     setFetching(props.state.shop.isFetching)
     setState(props.state.shop)
   }, [props.state.shop])
-
   let items = state.shopData.map((elem) => {
 
     return (
       <div className={style.item} key={elem.id}>
         <img
           className={style.image}
-          src={fetching ? loader : "data:image/png;base64," + elem.base64}
+          src={"data:image/png;base64," + elem.base64}
           alt={elem.desc}
           width="300"
           height="300"
@@ -56,7 +55,7 @@ function Shop(props) {
   });
   return (
     <SRLWrapper options={options}>
-      <div className={style.shopImage}>{items}</div>
+      <div className={style.shopImage}>{ fetching ? loader : items}</div>
     </SRLWrapper>
   );
 }

@@ -5,12 +5,15 @@ const adminRouter = require("./Routes/adminRoute.js");
 const getShop = require("./Routes/shopRoute.js");
 const path = require("path");
 const cors = require("cors");
+const  bodyParser = require('body-parser')
 
 const app = express();
 // const __dirname = path.resolve(path.dirname(""));
 
 app.set("view engine", "jade");
 app.use(cors())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 app.use("/api", getShop);
 app.use("/admin", adminRouter);
 app.use("/", express.static(path.join(__dirname, config.STATIC_FILES)));
