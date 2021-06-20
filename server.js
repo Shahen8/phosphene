@@ -2,6 +2,7 @@ const config = require("./config.js");
 const express = require("express");
 const mongoose = require("mongoose");
 const adminRouter = require("./Routes/adminRoute.js");
+const addItemsRouter = require("./Routes/addItemsRoute.js");
 const getShop = require("./Routes/shopRoute.js");
 const path = require("path");
 const cors = require("cors");
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.use("/api", getShop);
 app.use("/admin", adminRouter);
+app.use("/new", addItemsRouter);
 app.use("/", express.static(path.join(__dirname, config.STATIC_FILES)));
 
 // app.get("*", (req, res) => {

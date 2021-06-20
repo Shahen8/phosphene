@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose";
+const {Schema , model} = require ("mongoose")
 
 const pedantSchema = new Schema({
   base64: {
@@ -8,9 +8,8 @@ const pedantSchema = new Schema({
   },
   description: {
     type: String,
-    required: false,
   }
 })
-const pendant = model("Pendant", pedantSchema)
+module.exports = model("Pendant", pedantSchema)
 
-export default pendant;
+

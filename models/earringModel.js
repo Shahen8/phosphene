@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const earringSchema = new Schema({
   base64: {
@@ -7,9 +7,7 @@ const earringSchema = new Schema({
     unique: true,
   },
   description: {
-    type: String
-  }
-})
-const earring = model("earring", earringSchema)
-
-export default earring;
+    type: String,
+  },
+});
+module.exports = model("Earring", earringSchema);

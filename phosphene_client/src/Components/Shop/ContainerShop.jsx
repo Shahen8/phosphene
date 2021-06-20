@@ -10,13 +10,7 @@ let mapStateToProps = (state) => {
   return { state };
 };
 
-// let mapDispatchToProps = () => {
-//   return {
-//     pendants: () => getPendantsThunk(),
-//     brooches: () => getBroochesThunk(),
-//     earrings: () => getEarringsThunk(),
-//   };
-// };
+
 
 const ContainerShop = connect(mapStateToProps, {
   pendants: () => getPendantsThunk(),

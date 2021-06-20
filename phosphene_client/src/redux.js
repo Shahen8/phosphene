@@ -1,12 +1,12 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 import shopReducer from "./Reducers/shopReducer";
-import authReducer from "./Reducers/authReducer";
+import adminReducer from "./Reducers/adminReducer";
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from "redux-form";
 
 let reducers = combineReducers({
   shop: shopReducer,
-  auth: authReducer,
+  admin: adminReducer,
   form: formReducer,
 });
 

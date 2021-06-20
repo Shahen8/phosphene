@@ -23,7 +23,7 @@ router.get("/getBrooches", async (req, res) => {
   }
 });
 
-router.get("/getPendandts", async (req, res) => {
+router.get("/getPendants", async (req, res) => {
   try {
     let pendants = await mongoose.connection.db
       .collection("pendants")

@@ -28,6 +28,7 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
     "i": "^0.3.6",
+    "image-to-base64": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.9",
     "npm": "^7.16.0"

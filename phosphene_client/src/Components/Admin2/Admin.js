@@ -3,20 +3,7 @@ import { Field, reduxForm } from "redux-form";
 import { minLength, required } from "../../Validation/validation";
 import styles from "./Admin.module.css";
 import DashBoard from "./DashBoard";
-
-export const fieldProto = ({
-  input,
-  placeholder,
-  type,
-  meta: { touched, warning },
-}) => {
-  return (
-    <div className={styles.inputField}>
-      <input {...input} placeholder={placeholder} type={type}></input>
-      {touched ? <span>{warning}</span> : undefined}
-    </div>
-  );
-};
+import { inputProto } from "../ReduxForm/components";
 
 
 const LoginForm = (props) => {
@@ -27,14 +14,14 @@ const LoginForm = (props) => {
         validate={required}
         name="login"
         placeholder="Username"
-        component={fieldProto}
+        component={inputProto}
         warn={required}
       />
       <Field
         validate={(required, minLength)}
         type="password"
         name="password"
-        component={fieldProto}
+        component={inputProto}
         placeholder="Password"
         warn={minLength}
       />
@@ -48,23 +35,29 @@ const ReduxLogin = reduxForm({ form: "login" })(LoginForm);
 const Login = (props) => {
   
 
-  const [auth, setAuth] = useState(props.state.auth.auth);
+  const [auth, setAuth] = useState(props.state.admin.auth);
 
   useEffect ( () => {
     props.authMe(sessionStorage.getItem("token"))
   } , [auth])
 
   useEffect ( () => {
-    setAuth(props.state.auth.auth)
-  } , [props.state.auth.current])
+    setAuth(props.state.admin.auth)
+  } , [props.state.admin.current])
 
   function onSubmit(adminData) {
     props.onSubmit(adminData)
   }
+  function onSubmitDash(data){
+   
+    props.addItem(data)
+  }
+
+ 
   debugger;
 
   return (
-    <div className = {styles.container}>{auth ? <DashBoard /> : <ReduxLogin onSubmit={onSubmit} />}</div>
+    <div className = {styles.container}>{auth ? <DashBoard logOut = {props.logOut} onSubmit = {onSubmitDash}/> : <ReduxLogin onSubmit={onSubmit} />}</div>
   );
 };
 

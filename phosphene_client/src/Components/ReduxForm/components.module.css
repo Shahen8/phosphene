@@ -1,0 +1,16 @@
+.inputField {
+    border-radius: 3px;
+    width: max-content;
+    margin: .5em;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+  }
+  
+  .inputField > input {
+    height: 2.2em;
+  }
+  
+  .inputField > span {
+    color:rgb(245, 88, 88);
+    font-size: 12px;
+  }

@@ -1,20 +1,7 @@
-.inputField {
-  border-radius: 3px;
-  width: max-content;
-  margin: .5em;
+.dashForm{
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  width: 30%;
 }
-
-.inputField > input {
-  height: 2.2em;
-}
-
-.inputField > span {
-  color:rgb(245, 88, 88);
-  font-size: 12px;
-}
-
 h4{
   color:rgb(252, 248, 248);
   justify-self: center;
@@ -27,12 +14,22 @@ h4{
   justify-self: center;
   align-self: center;
   display: grid;
+  width:50%;
   background-color: rgb(226, 226, 226);
   border-style: solid;
   border-width: 1px;
-  padding: 3em;
-  width: max-content;
+  padding: 1em;
   border-radius: 10px;
+}
+.radioInput{
+  display:grid;
+}
+.radioInput>label {
+  margin:1em;
+  width: max-content;
+}
+.main > button {
+  justify-self: right;
 }
 
 .loginMain{

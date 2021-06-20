@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose";
+const {Schema , model} = require ("mongoose")
 
 const broocheSchema = new Schema({
   base64: {
@@ -10,6 +10,6 @@ const broocheSchema = new Schema({
     type: String,
   }
 })
-const brooche = model("Brooche", broocheSchema)
+module.exports = model("Brooche", broocheSchema)
 
-export default brooche;
+

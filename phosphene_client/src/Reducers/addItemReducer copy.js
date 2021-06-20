@@ -7,7 +7,7 @@ const authAC = (token, bool) => {
 };
 
 const authDefaultState = {
-  auth: false,
+  auth: true,
   current: null,
 };
 const authReducer = (authState = authDefaultState, action) => {
